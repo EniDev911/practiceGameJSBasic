@@ -1,76 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="assets/style.css" />
-  </head>
 
-  <body>
-    <div id="board">
-      <!-- <h3 class="title">Magic Number</h3> -->
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
 
-      <button class="btn-play"><span>Jugar</span></button>
-      <button class="btn-volume">
-        <i class="fa-solid fa-volume-high"></i>
-      </button>
-      <div class="collapse">
-        <!-- <input type="text" /> -->
-        <p id="text">
+<body>
+  <div id="board">
+    <!-- <h3 class="title">Magic Number</h3> -->
 
-        </p>
-      </div>
+    <button class="btn-play"><span>Jugar</span></button>
+    <button class="btn-volume">
+      <i class="fa-solid fa-volume-xmark"></i>
+    </button>
+    <div class="collapse">
+      <!-- <input type="text" /> -->
+      <p id="text">
+
+      </p>
     </div>
-    <script
-      src="https://kit.fontawesome.com/6b8f0c7049.js"
-      crossorigin="anonymous"
-    ></script>
+  </div>
+  <script src="https://kit.fontawesome.com/6b8f0c7049.js" crossorigin="anonymous"></script>
 
-    <script>
-      const board = document.getElementById("board");
-      const btnJugar = document.querySelector(".btn-play");
-      const btnAudio = document.querySelector(".btn-volume");
-      const audioMain = new Audio("assets/main.wav");
-    
+  <script>
+    const board = document.getElementById("board");
+    const btnJugar = document.querySelector(".btn-play");
+    const btnAudio = document.querySelector(".btn-volume");
+    const audioMain = new Audio("assets/main.wav");
 
 
-      btnJugar.addEventListener("click", () => {
-        // a la antigua con recursividad
-        var opacity = 1 ;
-        (function loop() {
-              setTimeout(function () {
-                opacity = Number(opacity.toFixed(1)) - 0.1;
-                board.style.opacity = `${opacity}`
-                if (opacity === 0) {
-                    board.style.display = "none"
-                      return
-                  }
-                  loop();
-              }, 70);
-              console.log(opacity);
-          })()
-      });
 
-      btnAudio.addEventListener("click", async () => {
-          const childBtnAudio = btnAudio.firstElementChild;
-          if (childBtnAudio.classList.contains("fa-volume-high")){
-              childBtnAudio.classList.replace("fa-volume-high", "fa-volume-xmark");
-              audioMain.muted = true
-          } else {
-            childBtnAudio.classList.replace("fa-volume-xmark", "fa-volume-high");
-              audioMain.muted = false
-              audioMain.loop = true;
-              await audioMain.play();
+    btnJugar.addEventListener("click", () => {
+      // a la antigua con recursividad
+      audioMain.src = "assets/startup.wav";
+      audioMain.loop = false;
+      audioMain.play();
+      var opacity = 1;
+      (function loop() {
+        setTimeout(function () {
+          opacity = Number(opacity.toFixed(1)) - 0.1;
+          board.style.opacity = `${opacity}`
+          if (opacity === 0) {
+            board.style.display = "none"
+            return
           }
-      })
+          loop();
+        }, 70);
+        console.log(opacity);
+      })()
+    });
 
-      document.addEventListener("load", async ()=>{
-          console.log(audioMain);
-          audioMain.loop = true;
-          await audioMain.play();
-      })
-    </script>
-  </body>
+    btnAudio.addEventListener("click", async () => {
+      const childBtnAudio = btnAudio.firstElementChild;
+      if (childBtnAudio.classList.contains("fa-volume-high")) {
+        childBtnAudio.classList.replace("fa-volume-high", "fa-volume-xmark");
+        audioMain.muted = true
+      } else {
+        childBtnAudio.classList.replace("fa-volume-xmark", "fa-volume-high");
+        audioMain.muted = false
+        audioMain.loop = true;
+        await audioMain.play();
+      }
+    })
+
+    document.addEventListener("load", async () => {
+      console.log(audioMain);
+      audioMain.loop = true;
+      await audioMain.play();
+    })
+  </script>
+</body>
+
 </html>
