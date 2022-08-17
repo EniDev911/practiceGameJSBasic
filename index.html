@@ -7,27 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
   <link rel="stylesheet" href="assets/style.css" />
+  <style>
+
+  </style>
 </head>
 
 <body>
   <div id="board">
-    <!-- <h3 class="title">Magic Number</h3> -->
-
-    <button class="btn-play"><span>Jugar</span></button>
+    <div class="game">
+      <h2 class="game-title">Trivia</h2>
+      <button class="btn-play"><span>Jugar</span></button>
+    </div>
     <button class="btn-volume">
       <i class="fa-solid fa-volume-xmark"></i>
     </button>
-  </div>
-  <div class="collapse">
-    <!-- <input type="text" /> -->
-    <p id="text">
-      <input type="text" placeholder="Nombre jugador">
-      <select name="" id="">
-        <option value="">Selecciona una categoría</option>
-        <option value="">Tecnología</option>
-        <option value="">Juegos retro</option>
-      </select>
-    </p>
   </div>
   <script src="https://kit.fontawesome.com/6b8f0c7049.js" crossorigin="anonymous"></script>
 
@@ -37,24 +30,25 @@
     const btnAudio = document.querySelector(".btn-volume");
     const audioMain = new Audio("assets/main.wav");
 
-
-
     btnJugar.addEventListener("click", () => {
       // a la antigua con recursividad
+      const html = document.querySelector("html");
       audioMain.src = "assets/startup.wav";
       audioMain.loop = false;
       audioMain.play();
       var opacity = 1;
       (function loop() {
         setTimeout(function () {
-          opacity = Number(opacity.toFixed(1)) - 0.1;
-          board.style.opacity = `${opacity}`
-          if (opacity === 0) {
-            board.style.display = "none"
+          opacity = Number(opacity.toFixed(1)) - 0.06;
+          html.style.opacity = `${opacity}`
+          if (opacity === 0 || opacity < 0) {
+            html.style.display = "none"
+            window.close()
+            window.open("./trivia-js/index.html")
             return
           }
           loop();
-        }, 70);
+        }, 150);
         console.log(opacity);
       })()
     });
@@ -71,12 +65,12 @@
         await audioMain.play();
       }
     })
-
     document.addEventListener("load", async () => {
       console.log(audioMain);
       audioMain.loop = true;
       await audioMain.play();
     })
+
   </script>
 </body>
 

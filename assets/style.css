@@ -81,6 +81,19 @@
         z-index: 1;
         transition: .3s ease-in-out all;
     }
+
+    .game{
+        text-align: center;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .game .game-title{
+        margin: 10px 0;
+        font-size: 30px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
     #board .btn-volume {
         display: inline-flex;
         border: none;

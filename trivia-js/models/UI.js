@@ -51,7 +51,7 @@ export class UI {
    */
   showScores(score) {
     const quizEndHTML = `
-      <h1>Result</h1>
+      <h1>Resultado</h1>
       <h2>Puntaje total: ${score}</h2>
     `;
     const element = document.getElementById("quiz");

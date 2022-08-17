@@ -37,6 +37,14 @@ export const data = [
         choices: ["http", "https", "smtp", "ftp"],
         answer: "https",
       },
+      {
+        question:
+          "¿Cuál de las siguientes opciones NO es un pre-procesador de estilos CSS?",
+        png: "pre-procesador.png",
+        category: "tech",
+        choices: ["LESS", "SASS", "STYLUS", "JQUERY"],
+        answer: "JQUERY",
+      },
     ],
   },
   {

@@ -13,10 +13,11 @@ export class Question {
     this.answer = answer;
     this.category = category;
   }
+
   /**
    *
-   * @param {string} choice 'some text to guess'
-   * @returns {boolean} 'return true if the answer is correct'
+   * @param {string} choice some text to an answer
+   * @returns
    */
   correctAnswer(choice) {
     return choice === this.answer;
