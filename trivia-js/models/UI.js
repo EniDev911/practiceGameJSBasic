@@ -1,14 +1,30 @@
+import { Config } from "./Config.js";
+
 export class UI {
-  constructor() {}
+  /**
+   *
+   * @param {Config} config config as path..
+   */
+  constructor(path) {
+    this.path = path;
+  }
 
   /**
    *
    * @param {string} text question text to render
    */
-  showQuestion(text) {
+
+  showQuestion(text, screenshot) {
+    const title = document.getElementById("title");
+    title.innerHTML = "Tecnología";
     const questionTitle = document.getElementById("question");
     questionTitle.innerHTML = text;
+    if (screenshot != "") {
+      const screenShoot = document.getElementById("screenshoot");
+      screenShoot.innerHTML = `<img src="${this.path + screenshot}" />`;
+    }
   }
+
   /**
    *
    * @param {string[]} choices the choices of the question

@@ -5,83 +5,22 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    * {
-      padding: 0;
-      margin: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: #272343;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-
-    }
-
-    #quiz {
-      background: #e3f6f5;
-      width: 30rem;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 2px 4px 20px #000;
-    }
-
-    h1 {
-      color: #57636e;
-      font-size: 3rem;
-      padding: 2px 0;
-
-    }
-
-    #question {
-      font-size: 2rem;
-      color: #57636e;
-      text-align: center;
-    }
-    #choices {
-      width: 100%;
-      display: inline-flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    .button {
-      background: #34a3a3;
-      color: white;
-      font-size: 20px;
-      width: 90%;
-      border-radius: 4px;
-      padding: 10px 20px;
-      margin: 10px auto;
-      border: 0;
-    }
-
-    .button:hover {
-      background: #514889;
-      cursor: pointer;
-    }
-
-    #progress{
-      font-size: 22px;
-    }
-  </style>
+  <link rel="stylesheet" href="public/css/style.css">
+  <title>Trivia</title>
 </head>
 
 <body>
   <div id="quiz">
-    <h1>Quiz</h1>
+    <h1 id="title">Selecciona una categoría</h1>
     <hr>
-    <h2 id="question">Pregunta</h2>
+    <h2 id="question"></h2>
+    <div id="screenshoot"></div>
+    <hr>
     <div id="choices"></div>
     <hr>
     <footer>
       <p id="progress"></p>
     </footer>
-
     <script src="app.js" type="module"></script>
   </div>
 </body>
