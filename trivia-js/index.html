@@ -25,12 +25,14 @@
     #quiz {
       background: #e3f6f5;
       width: 30rem;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 2px 4px 20px #000;
     }
 
     h1 {
       color: #57636e;
       font-size: 3rem;
-      text-align: center;
       padding: 2px 0;
 
     }
@@ -40,20 +42,31 @@
       color: #57636e;
       text-align: center;
     }
-
-    button {
+    #choices {
+      width: 100%;
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .button {
       background: #34a3a3;
       color: white;
       font-size: 20px;
+      width: 90%;
       border-radius: 4px;
       padding: 10px 20px;
-      margin: 10px 40px 10px;
+      margin: 10px auto;
       border: 0;
     }
 
-    button:hover {
+    .button:hover {
       background: #514889;
       cursor: pointer;
+    }
+
+    #progress{
+      font-size: 22px;
     }
   </style>
 </head>
@@ -63,14 +76,13 @@
     <h1>Quiz</h1>
     <hr>
     <h2 id="question">Pregunta</h2>
-    <div id="choices">
-      <button>opcion</button>
-      <button>opcion2</button>
-    </div>
+    <div id="choices"></div>
     <hr>
     <footer>
-      <p id="progress">Question x of y</p>
+      <p id="progress"></p>
     </footer>
+
+    <script src="app.js" type="module"></script>
   </div>
 </body>
 
