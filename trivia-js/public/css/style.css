@@ -85,3 +85,13 @@
     padding: 10px;
     text-transform: lowercase;
   }
+  @media (max-width: 520px){
+    body{
+      background: #514889;
+      padding: 10px;
+    }
+    #quiz{
+      height: 100%;
+      width: 100%;
+    }
+  }
