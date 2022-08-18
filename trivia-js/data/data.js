@@ -45,6 +45,18 @@ export const data = [
         choices: ["LESS", "SASS", "STYLUS", "JQUERY"],
         answer: "JQUERY",
       },
+      {
+        question: "¿Quién creó el lenguaje de marcado HTML?",
+        png: "html.png",
+        category: "tech",
+        choices: [
+          "Don ramón",
+          "James Gosling",
+          "Dennis Ritchie",
+          "Tim Berners-Lee",
+        ],
+        answer: "Tim Berners-Lee",
+      },
     ],
   },
   {
