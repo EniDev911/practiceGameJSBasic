@@ -31,5 +31,8 @@ function main() {
   const config = new Config();
   const ui = new UI(config.getImagePath(quiz.getQuestionIndex().category));
   renderPage(quiz, ui);
+  window.addEventListener("load", () => {
+    document.body.className = "loaded";
+  });
 }
 main();

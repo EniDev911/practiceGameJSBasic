@@ -15,6 +15,13 @@
     align-items: center;
     min-height: 100vh;
     padding: 20px 0;
+    transition: opacity .5s;
+    opacity: 0;
+  }
+
+  .loaded {
+    opacity: 1;
+    overflow: auto;
   }
 
   #quiz {
@@ -85,12 +92,14 @@
     padding: 10px;
     text-transform: lowercase;
   }
-  @media (max-width: 520px){
-    body{
+
+  @media (max-width: 520px) {
+    body {
       background: #514889;
       padding: 10px;
     }
-    #quiz{
+
+    #quiz {
       height: 100%;
       width: 100%;
     }
