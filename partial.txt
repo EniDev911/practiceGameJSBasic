@@ -10,3 +10,18 @@ const requestDolar = async () => {
           }
         }
       requestDolar();
+
+      // (function loop() {
+      //   setTimeout(function () {
+      //     opacity = Number(opacity.toFixed(1)) - 0.06;
+      //     html.style.opacity = `${opacity}`
+      //     if (opacity === 0 || opacity < 0) {
+      //       html.style.display = "none"
+      //       window.close()
+      //       window.open("./trivia-js/index.html")
+      //       return
+      //     }
+      //     loop();
+      //   }, 150);
+      //   console.log(opacity);
+      // })()

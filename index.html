@@ -7,9 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Board games</title>
   <link rel="stylesheet" href="assets/style.css" />
-  <style>
-
-  </style>
 </head>
 
 <body>
@@ -31,26 +28,15 @@
     const audioMain = new Audio("assets/main.wav");
 
     btnJugar.addEventListener("click", () => {
-      // a la antigua con recursividad
       const html = document.querySelector("html");
       audioMain.src = "assets/startup.wav";
       audioMain.loop = false;
       audioMain.play();
-      var opacity = 1;
-      (function loop() {
-        setTimeout(function () {
-          opacity = Number(opacity.toFixed(1)) - 0.06;
-          html.style.opacity = `${opacity}`
-          if (opacity === 0 || opacity < 0) {
-            html.style.display = "none"
-            window.close()
-            window.open("./trivia-js/index.html")
-            return
-          }
-          loop();
-        }, 150);
-        console.log(opacity);
-      })()
+      document.body.className = "fade"
+      setTimeout(() => {
+        window.close()
+        window.open("./trivia-js/index.html")
+      }, 2800)
     });
 
     btnAudio.addEventListener("click", async () => {
