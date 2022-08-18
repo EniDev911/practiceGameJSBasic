@@ -50,12 +50,25 @@ export const data = [
         png: "html.png",
         category: "tech",
         choices: [
-          "Don ramón",
+          "Don Ramón",
           "James Gosling",
           "Dennis Ritchie",
           "Tim Berners-Lee",
         ],
         answer: "Tim Berners-Lee",
+      },
+      {
+        question:
+          "¿Qué representan los términos 'foo', 'bar' en la programación?",
+        png: "foobar.gif",
+        category: "tech",
+        choices: [
+          "Un poema",
+          "Marcadores de posición",
+          "Una ambiguedad",
+          "Ritual",
+        ],
+        answer: "Marcadores de posición",
       },
     ],
   },
